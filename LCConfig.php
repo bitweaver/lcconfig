@@ -34,6 +34,11 @@ class LCConfig extends BitBase {
 		return count( $this->mConfig );
 	}
 
+	public function reloadConfig(){
+		$this->mConfig = array();
+		return $this->loadConfig();
+	}
+
 	public function getConfig( $pName, $pContentTypeGuid, $pDefault = NULL ){
 		if( empty( $this->mConfig ) ) {
 			$this->loadConfig();
