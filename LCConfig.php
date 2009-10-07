@@ -102,7 +102,7 @@ class LCConfig extends BitBase {
 }
 
 function lcconfig_content_edit( &$pObject, &$pParamHash ){
-	global $gLibertySystem;
+	global $gBitSystem, $gLibertySystem;
 	$LCConfig = LCConfig::getInstance();
 	$guids = $LCConfig->getAllConfig( $pObject->getContentType() );
 	if( !empty( $guids ) ){ 
@@ -117,6 +117,10 @@ function lcconfig_content_edit( &$pObject, &$pParamHash ){
 					// the same page and needed the full list of plugins
 					unset( $gLibertySystem->mPlugins[$guid] );
 				}
+			}
+			// look for default format override
+			if( $key == 'default_format' && $value != $gBitSystem->getConfig( 'default_format' ) ){
+				$gBitSystem->setConfig( 'default_format', $value );
 			}
 		}
 	}
