@@ -31,7 +31,7 @@ if( !empty( $_REQUEST['save'] )) {
 					// if format is not supported it can't be the default
 					$LCConfig->expungeConfig( 'default_format', $ctype );
 					if( !empty( $_REQUEST['default_format_'.$ctype] ) && $_REQUEST['default_format_'.$ctype] == $guid ){
-						$feedback['error'] = tra( 'You can not select the disabled format '.$plugin['format_label'].' as the default format. Please choose another for content type '.$ctype );
+						$feedback['error'] = tra( 'You can not select the disabled format '.$plugin['edit_label'].' as the default format. Please choose another for content type '.$ctype );
 					}
 				}
 			}
