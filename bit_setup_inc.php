@@ -10,7 +10,7 @@ $gBitSystem->registerPackage( $registerHash );
 
 if( $gBitSystem->isPackageActive( 'lcconfig' ) ) {
 	// service funcs
-	define( 'LIBERTY_SERVICE_LCCONFIG', 'liberty content config' );
+	define( 'LIBERTY_SERVICE_LCCONFIG', 'content_config' );
 	$gLibertySystem->registerService( LIBERTY_SERVICE_LCCONFIG, LCCONFIG_PKG_NAME, array(
 		'content_preview_function'		=> 'lcconfig_content_edit',
 		'content_edit_function'			=> 'lcconfig_content_edit',
