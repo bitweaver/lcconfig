@@ -1,7 +1,7 @@
 {strip}
 <div class="admin liberty">
 	<div class="header">
-		<h1>{tr}Set Service Preferences{/tr}</h1>
+		<h1>{tr}Set Services Preferences{/tr}</h1>
 	</div>
 	<div class="body">
 		{assign var=system_default_format value=$gBitSystem->getConfig('default_format')}
