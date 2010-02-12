@@ -5,6 +5,8 @@ $gBitSystem->verifyPermission( 'p_admin' );
 require_once( '../LCConfig.php' );
 $LCConfig = LCConfig::getInstance();
 
+// vd( $_REQUEST );
+
 // deal with service preferences
 if( !empty( $_REQUEST['save'] )) {
 	$gBitUser->verifyTicket();
@@ -12,7 +14,7 @@ if( !empty( $_REQUEST['save'] )) {
 
 	// store prefs
 	foreach( array_keys( $gLibertySystem->mContentTypes ) as $ctype ) {
-		foreach( $gLibertySystem->mServices as $guid=>$pkg ) {
+		foreach( $gLibertySystem->mServices as $guid=>$service ) {
 			if( !empty( $_REQUEST['service_guids'][$guid][$ctype] ) ) {
 				vd( 'service_'.$guid );
 			}
