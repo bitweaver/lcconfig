@@ -10,7 +10,7 @@
 			<table class="data">
 				<caption>{tr}Available Services{/tr}</caption>
 					{foreach from=$gLibertySystem->mServices item=service key=service_name}
-						{assign var=config_key value=service_$guid}
+						{assign var=config_key value=service_$service_name}
 						{cycle values="odd,even" assign="rowstyle"}
 						<tr class="{$rowstyle}">
 							<th class="alignleft" style="text-align:left">{tr}{$service_name|ucfirst}{/tr}</th>
@@ -27,7 +27,7 @@
 								{$service.description}
 							</td>
 							{if $service.required}
-								<td colspan="{$gLibertySystem->mContentTypes|@count}" style="text-align:center"><em>This is a required service and should not be disbaled</em></td>
+								<td colspan="{$gLibertySystem->mContentTypes|@count}" style="text-align:center"><em>This is a required service and should not be disabled</em></td>
 							{else}
 								{foreach from=$gLibertySystem->mContentTypes item=ctype key=p name=ctypes}
 									{* create option for each ctype *}
