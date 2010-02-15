@@ -31,7 +31,7 @@ class LCConfig extends BitBase {
 				}
 			}
 		}
-		vd( $this->mConfig );
+		// vd( $this->mConfig );
 		return count( $this->mConfig );
 	}
 
