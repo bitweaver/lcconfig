@@ -41,6 +41,7 @@ if( !empty( $_REQUEST['save'] )) {
 	if( empty( $feedback['error'] ) ){
 		$LCConfig->mDb->CompleteTrans();
 		$feedback['success'] = tra( "The formats were assigned to the selected content types." );
+		$LCConfig->reloadConfig();
 	}
 	else{
 		$LCConfig->mDb->RollbackTrans();
@@ -48,7 +49,6 @@ if( !empty( $_REQUEST['save'] )) {
 	}
 }
 $gBitSmarty->assign_by_ref( 'feedback', $feedback );
-
 
 $gBitSmarty->assign_by_ref( 'LCConfigSettings', $LCConfig->getAllConfig() );
 $gBitSystem->display( 'bitpackage:lcconfig/admin_formats.tpl', tra( 'Assign Content Type Formats' ), array( 'display_mode' => 'admin' ));

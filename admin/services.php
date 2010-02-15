@@ -30,6 +30,7 @@ if( !empty( $_REQUEST['save'] )) {
 	if( empty( $feedback['error'] ) ){
 		$LCConfig->mDb->CompleteTrans();
 		$feedback['success'] = tra( "Services preferences were updated." );
+		$LCConfig->reloadConfig();
 	}
 	else{
 		$LCConfig->mDb->RollbackTrans();
