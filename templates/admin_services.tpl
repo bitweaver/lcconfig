@@ -4,7 +4,6 @@
 		<h1>{tr}Set Services Preferences{/tr}</h1>
 	</div>
 	<div class="body">
-		{assign var=system_default_format value=$gBitSystem->getConfig('default_format')}
 		{formfeedback hash=$feedback}
 		{form}
 			<table class="data">
