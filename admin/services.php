@@ -38,5 +38,5 @@ if( !empty( $_REQUEST['save'] )) {
 }
 $gBitSmarty->assign_by_ref( 'feedback', $feedback );
 
-$gBitSmarty->assign_by_ref( 'LCConfig', $LCConfig->getAllConfig() );
+$gBitSmarty->assign_by_ref( 'LCConfigSettings', $LCConfig->getAllConfig() );
 $gBitSystem->display( 'bitpackage:lcconfig/admin_services.tpl', tra( 'Set Service Preferences' ), array( 'display_mode' => 'admin' ));

@@ -33,7 +33,7 @@
 									{* create option for each ctype *}
 									<td class="aligncenter" style="width:25px; padding:0 15px">
 										{* we inverse the checked check since these are a negation of allowing the format type - present to user like things are normal *}
-										<input id="{$p}_{$service}" type="checkbox" value="{$p}" name="service_guids[{$service_name}][{$p}]" title="{$service_name}" {if !$LCConfig.$p.$config_key}checked="checked"{/if} />
+										<input id="{$p}_{$service}" type="checkbox" value="{$p}" name="service_guids[{$service_name}][{$p}]" title="{$service_name}" {if !$LCConfigSettings.$p.$config_key}checked="checked"{/if} />
 									</td>
 								{/foreach}
 							{/if}

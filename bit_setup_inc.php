@@ -26,6 +26,8 @@ if( $gBitSystem->isPackageActive( 'lcconfig' ) ) {
 		)
 	);
 	require_once( 'LCConfig.php' );
+	$LCConfig = LCConfig::getInstance();
+	$gBitSmarty->assign_by_ref( 'LCConfig', $LCConfig );
 }
 
 

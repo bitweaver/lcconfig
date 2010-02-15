@@ -31,6 +31,7 @@ class LCConfig extends BitBase {
 				}
 			}
 		}
+		vd( $this->mConfig );
 		return count( $this->mConfig );
 	}
 
@@ -43,6 +44,7 @@ class LCConfig extends BitBase {
 		if( empty( $this->mConfig ) ) {
 			$this->loadConfig();
 		}
+		// vd(  $this->mConfig[$pContentTypeGuid][$pName] );
 		return( empty( $this->mConfig[$pContentTypeGuid][$pName] ) ? $pDefault : $this->mConfig[$pContentTypeGuid][$pName] );
 	}
 

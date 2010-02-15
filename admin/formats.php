@@ -50,5 +50,5 @@ if( !empty( $_REQUEST['save'] )) {
 $gBitSmarty->assign_by_ref( 'feedback', $feedback );
 
 
-$gBitSmarty->assign_by_ref( 'LCConfig', $LCConfig->getAllConfig() );
+$gBitSmarty->assign_by_ref( 'LCConfigSettings', $LCConfig->getAllConfig() );
 $gBitSystem->display( 'bitpackage:lcconfig/admin_formats.tpl', tra( 'Assign Content Type Formats' ), array( 'display_mode' => 'admin' ));

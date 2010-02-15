@@ -31,8 +31,8 @@
 							{if $plugin.is_active eq 'y' and $plugin.edit_field and $plugin.plugin_type eq 'format'}
 								{assign var=config_key value=format_$guid}
 								{assign var=default_config_key value=default_format_$p}
-								{if $LCConfig.$p.default_format && ($LCConfig.$p.default_format && $system_default_format)}
-									{assign var=default_format value=$LCConfig.$p.default_format}
+								{if $LCConfigSettings.$p.default_format && ($LCConfigSettings.$p.default_format && $system_default_format)}
+									{assign var=default_format value=$LCConfigSettings.$p.default_format}
 								{else}
 									{assign var=default_format value=$system_default_format}
 								{/if}
@@ -40,7 +40,7 @@
 									(<span class='small'>{if $guid eq $system_default_format}system default{else}default{/if})</span>{html_radios values=$guid name=$default_config_key checked=$default_format}
 									{* we inverse the checked check since these are a negation of allowing the format type - present to user like things are normal *}
 									<input id="{$p}_{$plugin.plugin_guid}" type="checkbox" value="{$p}" name="plugin_guids[{$plugin.plugin_guid}][{$p}]" title="{$plugin.format_name}" 
-									{if !$LCConfig.$p.$config_key}checked="checked"{/if}
+									{if !$LCConfigSettings.$p.$config_key}checked="checked"{/if}
 									/>
 								</td>
 							{/if}
