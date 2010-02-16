@@ -31,8 +31,11 @@
 								{foreach from=$gLibertySystem->mContentTypes item=ctype key=p name=ctypes}
 									{* create option for each ctype *}
 									<td class="aligncenter" style="width:25px; padding:0 15px">
-										{* we inverse the checked check since these are a negation of allowing the format type - present to user like things are normal *}
-										<input id="{$p}_{$service}" type="checkbox" value="{$p}" name="service_guids[{$service_name}][{$p}]" title="{$service_name}" {if !$LCConfigSettings.$p.$config_key}checked="checked"{/if} />
+										<select name="service_guids[{$service_name}][{$p}]" id="{$p}_{$service}">
+											<option value="" 			{if !$LCConfigSettings.$p.$config_key}selected="selected"{/if}				>Include</option>
+											<option value="required" 	{if $LCConfigSettings.$p.$config_key eq 'required' }selected="selected"{/if}>Require</option>
+											<option value="n" 			{if $LCConfigSettings.$p.$config_key eq 'n'}selected="selected"{/if}		>Exclude</option>
+										</select>
 									</td>
 								{/foreach}
 							{/if}

@@ -16,12 +16,13 @@ if( !empty( $_REQUEST['save'] )) {
 	foreach( array_keys( $gLibertySystem->mContentTypes ) as $ctype ) {
 		foreach( $gLibertySystem->mServices as $guid=>$service ) {
 			if( empty( $service['required'] ) ){
-				if( !empty( $_REQUEST['service_guids'][$guid][$ctype] ) ) {
+				if( empty( $_REQUEST['service_guids'][$guid][$ctype] ) || $_REQUEST['service_guids'][$guid][$ctype] == 'y' ){
 					// for service config we actually store the negation, so remove a positive record to keep the db records light
 					$LCConfig->expungeConfig( 'service_'.$guid, $ctype );
 				} else {
-					// for service config we actually store the negation
-					$LCConfig->storeConfig( 'service_'.$guid, $ctype, 'n' );
+					// for service config we actually store the negation or a special value
+					// valid params are 'n' and 'required'
+					$LCConfig->storeConfig( 'service_'.$guid, $ctype, $_REQUEST['service_guids'][$guid][$ctype] );
 				}
 			}
 		}
