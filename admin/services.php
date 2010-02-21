@@ -5,12 +5,18 @@ $gBitSystem->verifyPermission( 'p_admin' );
 require_once( '../LCConfig.php' );
 $LCConfig = LCConfig::getInstance();
 
-// vd( $_REQUEST );
+// sort services by required state and name to help make the table more legible
+foreach( $gLibertySystem->mServices as $sguid=>$serv ){
+	$required[$sguid] = $serv['required'];
+	$name[$sguid] = $sguid;
+}
+array_multisort( $required, SORT_ASC, $name, SORT_ASC, $gLibertySystem->mServices );
 
 // deal with service preferences
 if( !empty( $_REQUEST['save'] )) {
 	$gBitUser->verifyTicket();
 	$LCConfig->mDb->StartTrans();
+
 
 	// store prefs
 	foreach( array_keys( $gLibertySystem->mContentTypes ) as $ctype ) {
