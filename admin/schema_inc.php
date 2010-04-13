@@ -20,7 +20,7 @@ foreach( array_keys( $tables ) AS $tableName ) {
 
 $gBitInstaller->registerPackageInfo( LCCONFIG_PKG_NAME, array(
 	'description' => "Liberty Content Type Configuration.",
-	'license' => 'Package must be licensed from <a href="http://tekimaki.com">Tekimaki LLC</a>, unauthorized use is prohibited.',
+	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
 ));
 
 // Package requirements
