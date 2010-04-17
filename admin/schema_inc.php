@@ -24,7 +24,7 @@ $gBitInstaller->registerPackageInfo( LCCONFIG_PKG_NAME, array(
 ));
 
 // Package requirements
-$gBitInstaller->registerRequirements( KERNEL_PKG_NAME, array(
-	'liberty'   => array( 'min' => '2.1.0' ),
+$gBitInstaller->registerRequirements( LCCONFIG_PKG_NAME, array(
+	'liberty'   => array( 'min' => '2.1.4' ),
 ));
 
