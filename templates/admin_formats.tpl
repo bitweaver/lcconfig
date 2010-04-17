@@ -26,7 +26,7 @@
 						{assign var=prev_package value=$ctype.handler_package}
 					{/if}
 					<tr class="{cycle values="odd,even"}">
-						<td title="{$p}">{$ctype.content_description}</td>
+						<td title="{$p}">{$gLibertySystem->getContentTypeName($ctype.content_type_guid)}</td>
 						{foreach name=formatPlugins from=$gLibertySystem->mPlugins item=plugin key=guid}
 							{if $plugin.is_active eq 'y' and $plugin.edit_field and $plugin.plugin_type eq 'format'}
 								{assign var=config_key value=format_$guid}

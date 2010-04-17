@@ -15,7 +15,7 @@
 							<th class="alignleft" style="text-align:left">{tr}{$service_name|ucfirst}{/tr}</th>
 							{foreach from=$gLibertySystem->mContentTypes item=ctype key=p name=ctypes}
 							<th>
-								{$ctype.content_description}
+								{$gLibertySystem->getContentTypeName($ctype.content_type_guid)}
 							</th>
 							{/foreach}
 						</tr>
