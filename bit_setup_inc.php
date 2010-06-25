@@ -4,7 +4,7 @@ global $gBitSystem;
 $registerHash = array(
 	'package_name' => 'lcconfig',
 	'package_path' => dirname( __FILE__ ).'/',
-	'homeable' => TRUE,
+	'required_package'=> TRUE,
 );
 $gBitSystem->registerPackage( $registerHash );
 
