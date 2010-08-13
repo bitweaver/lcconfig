@@ -6,6 +6,7 @@
 	<div class="body">
 		{formfeedback hash=$feedback}
 		{form}
+			<div style="width:100%; overflow:auto;">
 			<table class="data">
 				<caption>{tr}Available Services{/tr}</caption>
 					{foreach from=$gLibertySystem->mServices item=service key=service_name}
@@ -42,6 +43,7 @@
 						</tr>
 					{/foreach}
 			</table>
+			</div>
 			<div class="submit">
 				<input type="submit" name="save" value="{tr}Apply Changes{/tr}" />
 			</div>
